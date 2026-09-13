@@ -1,0 +1,4 @@
+Hi this is melvin testing a program that count the number of words in the file and 
+also the number of letters that are repeated in the file we count both words and letters in this file 
+
+If there is a well there is a way ha ha ha 

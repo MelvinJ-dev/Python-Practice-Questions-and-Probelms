@@ -1,0 +1,29 @@
+# Example for break 
+print("Break statement")
+for i in range(6):
+    if(i==4):
+        break  
+        print(4)             # break statement exit the loop permanently
+    else:
+        print(i)
+
+print ("******")
+# Example for continue 
+print("continue statement")
+for i in range(6):
+    if(i==4):
+        continue  
+        print(4)          # continue will skip the particular condition or loop
+    else:
+        print(i)
+print("*****")
+
+# Example for pass
+print("Pass statement")
+for i in range(6):
+    if(i==4):
+        pass   
+        print(4)             # pass statement will do nothing
+    else:
+        print(i)
+print("******")
