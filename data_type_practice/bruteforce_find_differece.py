@@ -41,18 +41,91 @@
 # At the end, you’ll have the difference between the maximum and minimum
 
 
-def find_differece(items):
-    diff = [] 
+# def find_differece(items):
+#     diff = [] 
     
-    for i in range(len(items)-1):
-        diffe = items[i]-items[i+1]
-        diff.append(diffe)
-    for i in range(len(diff)-1):
-        larg_diff = diff[0]
-        if diff[i]<diff[i+1]:
-            larg_diff = diff[i+1]
+#     for i in range(len(items)-1):
+#         diffe = items[i]-items[i+1]
+#         diff.append(diffe)
+#     for i in range(len(diff)-1):
+#         larg_diff = diff[0]
+#         if diff[i]<diff[i+1]:
+#             larg_diff = diff[i+1]
 
     
-    print(larg_diff)
-    print(diff)
-find_differece([20,11,15,3])
+#     print(larg_diff)
+#     print(diff)
+
+# Input: lst = [1, 7, 3, 10, 5]
+# Output: 7
+
+# The maximum difference is between 3 and 10 (i.e., |3 - 10| = 7).
+
+# Input: lst = [10, 11, 15, 3]
+# Output: 12
+
+# def find_difference(lis):
+
+#     max_diff = 0
+#     diff = []
+#     #greater_number,smaller_number = 0
+
+#     for i in range(len(lis)):
+#         for j in range(len(lis)):
+#             values = abs(lis[i]-lis[j])
+            
+#             if max_diff < values:
+#                 max_diff = values
+
+#                 if(lis[i]<lis[j]):
+#                     greater_digit = lis[j]
+#                     smaller_digit = lis[i]
+#                 else:
+#                     greater_digit = len[i]
+#                     smaller_digit = len[j]
+
+#     print(max_diff)
+#     print(f'greater_digit : {greater_digit}\nsmaller_digit : {smaller_digit}')
+#     print(f'difference : {diff}')
+# find_difference([1,2,3,4,9])
+
+
+# def max_consecutive_difference(lst):
+#     # Your code goes here
+#     max_diff = 0
+#     for i in range(len(lst)):
+#         for j in range(len(lst)):
+            
+#             diff = abs(lst[i]-lst[j])
+#             if diff > max_diff:
+#                 max_diff = diff
+#     return max_diff
+
+# num = max_consecutive_difference([1, 7, 3, 10, 5])
+
+# print(num)
+
+# Start with max_diff = 0.
+# Use two nested loops:
+# Outer loop picks an element at index i.
+# Inner loop checks only the next element (j = i+1).
+# Compute the absolute difference abs(lst[i] - lst[j]).
+# Update max_diff if this difference is larger.
+# Continue until all consecutive pairs are tested.
+
+def max_consecutive_difference(lst):
+    max_diff = 0
+    # Outer loop
+    for i in range(len(lst)):
+        # Inner loop
+        for j in range(len(lst)):
+            # Only check consecutive pairs
+            if j == i + 1:
+                diff = abs(lst[i] - lst[j])
+                if diff > max_diff:
+                    max_diff = diff
+    return max_diff
+
+# Example
+num = max_consecutive_difference([1, 7, 3, 10, 5])
+print(num)   # Output: 7
