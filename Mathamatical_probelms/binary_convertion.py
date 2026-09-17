@@ -22,3 +22,4 @@ while num > 0:
 # reverse the list to get proper binary order
 remind.reverse()
 print(remind)   # [1, 0, 1]
+
