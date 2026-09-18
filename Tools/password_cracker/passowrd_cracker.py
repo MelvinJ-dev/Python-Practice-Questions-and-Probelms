@@ -79,8 +79,15 @@ def password_cracker(password):
     # Extra whitespace
     '\t','\n'
     ]
-
-    print(password)
+    crack = []
+    length = len(password)
+    char_length = len(characters)
+    for i in range(length):
+        for j in range(char_length):
+                if password[i]==characters[j]:
+                    crack.append(characters[j])
+    cracked = "".join(crack)
+    return cracked
 
 def password_generator(length):
     letters = string.ascii_letters
@@ -93,11 +100,8 @@ def password_generator(length):
         password+=word 
     return password
 
+password = password_generator(10)
 
-def password_cracker(password):
-    pass
-
-
-password = password_generator(16)
-
-password_cracker(password)
+cracked = password_cracker(password)
+print(f'Generated password : {password}')
+print(f'Cracked Password : {cracked}')
